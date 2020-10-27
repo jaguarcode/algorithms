@@ -2,4 +2,5 @@
 Trying to solve problems more beautifully.
 
 status
-32 solved.
+800 36 solved.
+900 09 solved.
