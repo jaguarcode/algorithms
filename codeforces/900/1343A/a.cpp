@@ -1,19 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
-int test_case(int n) {
-	int x = 0;
-	for(int k = 2; k < 30; k++) {
-		x = n / pow(2, k);
-		printf("%d\n", x);
-	}
-	return x;
-}
-
 int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
 	int n;
-	scanf("%d", &n);
-	int a[n] = {0};
-	for(int x = 0; x < n; x++) scanf("%d", &a[n]);
-	for(int x = 0; x < n; x++)
-		printf("%d\n", test_case(a[n]));
+	cin >> n;
+	int a[n];
+	for(int i = 0; i < n; i++) {
+		cin >> a[i];
+	}
+	for(int i = 0; i < n; i++) {
+		int x = 0;
+		for(int k = 2; k < 30; k++) {
+			x += a[i] / pow(2, k);
+			cout << x << "\n";
+			if(x == a[i])
+				cout << x << "\n";
+		}
+	}
+	return 0;
 }
