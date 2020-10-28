@@ -7,7 +7,7 @@ using namespace std;
 
 template<typename T>
 inline auto print(const T& t) {
-	for(auto e : t) cout << e << " ";
+	for(const auto& e : t) cout << e << " ";
 	cout << "\n";
 }
 
