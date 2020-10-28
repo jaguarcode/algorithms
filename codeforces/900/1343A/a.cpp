@@ -3,19 +3,17 @@ using namespace std;
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	int n;
-	cin >> n;
-	int a[n];
-	for(int i = 0; i < n; i++) {
-		cin >> a[i];
-	}
-	for(int i = 0; i < n; i++) {
-		int x = 0;
-		for(int k = 2; k < 30; k++) {
-			x += a[i] / pow(2, k);
-			cout << x << "\n";
-			if(x == a[i])
-				cout << x << "\n";
+	int t;
+	cin >> t;
+	while(t--) {
+		int n;
+		cin >> n;
+		for(int pw = 2; pw < 30; ++pw) {
+			int v = (1 << pw) - 1;
+			if(n % v == 0) {
+				cout << n / v << "\n";
+				break;
+			}
 		}
 	}
 	return 0;
