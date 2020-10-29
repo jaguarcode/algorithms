@@ -11,13 +11,11 @@ int main() {
 	int tt;
 	cin >> tt;
 	while(tt--) {
-		int n, k;
-		cin >> n >> k;
-		int a = 0;
-		if(n < k) a = k - n;
-		else if(n % 2 == k % 2) a = 0;
-		else a = 1;
-		cout << a << "\n";
+		int s;
+		cin >> s;
+		
+		// todo
+		
 	}
 	
 	return 0;
