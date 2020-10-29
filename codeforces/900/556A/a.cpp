@@ -13,18 +13,13 @@ int main() {
 	string s;
 	cin >> s;
 	
-	while(s.find("01")) {
-		auto w = s.find("01");
-		s.replace(s.begin() + w, s.begin() + w + 2, "");
+	int a = 0, b = 0;
+	for(auto c : s) {
+		if(c == '0') a++;
+		if(c == '1') b++;
 	}
 	
-	while(s.find("10")) {
-		auto w = s.find("10");
-		cout << w << "\n";
-		s.replace(s.begin() + w, s.begin() + w + 2, "");
-	}
+	cout << n - (2*std::min(a, b)) << "\n";
 	
-	cout << s.length() << "\n";
-		
 	return 0;
 }
