@@ -11,11 +11,16 @@ int main() {
 	int tt;
 	cin >> tt;
 	while(tt--) {
-		int s;
+		long s;
 		cin >> s;
-		
-		// todo
-		
+		long ans = 0;
+		int pw = 1000 * 1000 * 1000;
+		while(s > 0) {
+			while(s < pw) pw /= 10;
+			ans += pw;
+			s -= pw - pw / 10;
+		}
+		cout << ans << "\n";
 	}
 	
 	return 0;

@@ -9,17 +9,14 @@ int main() {
 	cin.tie(0);
 	int k;
 	cin >> k;
-	const int M = 12;
-	int tt = 12;
-	vector<int> y(M);
-	while(tt--)
-		scanf("%d", &y[(tt+1)%M]);
-	sort(y.begin(), y.end(), greater<int>());
-	int a = 0;
-	while(k > 0) {
-		k -= y[a];
-		a++;
-	}
-	cout << a << "\n";
+	vector<int> a(12);
+	for(int i = 0; i < 12; i++) cin >> a[i];
+	
+	sort(a.begin(), a.end(), greater<int>());
+		
+	int s = 0, i = 0;
+	while(s < k) s += a[i++];
+	cout << ((i > 12) ? -1 : i) << "\n";
+	
 	return 0;
 }
