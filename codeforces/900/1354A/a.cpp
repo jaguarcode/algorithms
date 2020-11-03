@@ -11,16 +11,16 @@ int main() {
 	int tt;
 	cin >> tt;
 	while(tt--) {
-		int n, k;
-		cin >> n >> k;
-		
-		int d = 1;
-		for(int x = d + 1; x <= n; x++)
-			if(n % x == 0) { d = x; break; }
-		n += d;
-		n += (k-1) * 2;
-		
-		cout << n << "\n";
+		int a, b, c, d;
+		cin >> a >> b >> c >> d;
+		long long sum = b;
+		a -= b;
+		while(a > 0) {
+			if(c - d < 0) { sum = -1; break; }
+			a -= (c - d);
+			sum += c;
+		}
+		cout << sum << "\n";
 	}
 	
 	return 0;
