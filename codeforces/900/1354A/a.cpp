@@ -13,14 +13,20 @@ int main() {
 	while(tt--) {
 		int a, b, c, d;
 		cin >> a >> b >> c >> d;
+		
 		long long sum = b;
+		if(b >= a) { cout << b << "\n"; continue; }
+		if(c <= b) { cout << -1 << "\n"; continue; }
+		
 		a -= b;
-		while(a > 0) {
-			if(c - d < 0) { sum = -1; break; }
-			a -= (c - d);
-			sum += c;
+		int diff = c - d;
+		if(diff > 0) {
+			long long k = (a % diff == 0) ? a/(c-d) : (a/(c-d)) + 1;
+			sum += (c * k);
+			cout << sum << "\n";
+		} else {
+			cout << -1 << "\n";
 		}
-		cout << sum << "\n";
 	}
 	
 	return 0;
