@@ -5,7 +5,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int n = 16;
+const int n = 4;
 int column[n*n], diag1[n*n], diag2[n*n];
 int answer = 0;
 
