@@ -12,7 +12,7 @@ inline auto print(const T& t) {
 }
 
 // Method 2. using bit representation of integers
-vector<int> myVector = {1,2,3,4,5,6,7,8,9};
+vector<int> myVector = {1,2,3,4};
 int n = myVector.size();
 
 int main() {
