@@ -10,16 +10,16 @@ int main() {
 	
 	int n;
 	cin >> n;
-	vector<int> a, p;
-	a.resize(n);
-	p.resize(n);
-	
+	vector<int> a(n), p(n);
 	for(int i = 0; i < n; i++) cin >> a[i] >> p[i];
 	
-	int sum = a[0] * p[i];
-	for(int i = 1; i < n; i++) {
-		
+	int sum = 0, min = 1e9+7;
+	for(int x = 0; x < n; x++) {
+		min = std::min(min, p[x]);
+		sum += (a[x] * min);
 	}
+
+	cout << sum << "\n";
 	
 	return 0;
 }
