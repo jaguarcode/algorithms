@@ -1,6 +1,12 @@
 /**
  * author: jaguarcode
  * date:
+ * 
+ * We can see that the only information we need is the parity of the 
+ * coordinate of each chip (because we can move all chips that have the 
+ * same parity to one coordinate for free). 
+ * So if the number of chips with odd coordinate is cnto 
+ * then the answer is min(cnto,n−cnto).
 **/
 #include <bits/stdc++.h>
 using namespace std;
