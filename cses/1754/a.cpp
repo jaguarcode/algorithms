@@ -7,19 +7,14 @@ using namespace std;
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	
-	int n;
-	cin >> n;
-	
-	int x = 1;
-	int sum = 0;
-	while(x != 0) {
-		x = n / 5;
-		sum += x;
-		n = x;
+
+	int tt;
+	cin >> tt;
+	while(tt--) {
+		int a, b;
+		cin >> a >> b;
+		cout << ((a+b) % 3 == 0 && (min(a, b) * 2 >= max(a, b)) ? "YES" : "NO") << "\n";
 	}
-	
-	cout << sum << "\n";
-	
+
 	return 0;
 }
