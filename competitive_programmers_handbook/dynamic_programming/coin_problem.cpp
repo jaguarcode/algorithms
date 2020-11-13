@@ -13,7 +13,6 @@ using namespace std;
 const int MAXN = 1e9+5;
 
 vector<int> coins = {1,3,4};
-int cnt = 0;
 
 int solve(int x) {
 	if(x == 0) return 0;
@@ -50,6 +49,39 @@ int solve_with_loop(int n) {
 	return value[n];
 }
 
+vector<int> first;
+void print_solve(int n) {
+	value[0] = 0;
+	for(int x = 1; x <= n; x++) {
+		value[x] = MAXN;
+		for(auto c : coins) {
+			if(x-c >= 0 && value[x-c]+1 < value[x]) {
+				value[x] = value[x-c]+1;
+				first[x] = c;
+			}
+		}
+	}
+	
+	while(n > 0) {
+		cout << first[n] << "\n";
+		n -= first[n];
+	}
+}
+
+vector<int> cnt;
+int counting_solutions(int n) {
+	cnt[0] = 1;
+	for(int x = 1; x <= n; x++) {
+		for(auto c : coins) {
+			if(x-c >= 0) {
+				cnt[x] += cnt[x-c];
+				cnt[x] %= MAXN;
+			}
+		}
+	}
+	return cnt[n];
+}
+
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
@@ -58,11 +90,18 @@ int main() {
 	cin >> n;
 	ready.resize(n);
 	value.resize(n);
+	first.resize(n);
+	cnt.resize(n);
 	
 	//int answer = solve(n);
 	//int answer = solve_with_memoization(n);
-	int answer = solve_with_loop(n);
-	cout << answer << "\n";
+	//int answer = solve_with_loop(n);
+	//cout << answer << "\n";
+	
+	//print_solve(n);
+	
+	int count = counting_solutions(n);
+	cout << count << "\n";
 	
 	return 0;
 }
