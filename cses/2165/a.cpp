@@ -4,6 +4,25 @@
 **/
 #include <bits/stdc++.h>
 using namespace std;
+
+vector<pair<int, int>> result;
+long cnt = 0;
+
+void move(int from, int to) {
+	result.push_back(pair(from,to));
+	cnt++;
+}
+
+void hanoi(int n, int from, int via, int to) {
+	if(n == 1)
+		move(from, to);
+	else {
+		hanoi(n-1, from, to, via);
+		move(from, to);
+		hanoi(n-1, via, from, to);
+	}
+}
+
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
@@ -11,30 +30,11 @@ int main() {
 	int n;
 	cin >> n;
 	
-	stack<int> left, middle, right;
+	hanoi(n, 1, 2, 3);
 	
-	while(n--) left.push(n+1);
-	
-	while(left.size()) {
-		int top = left.top();
-		if(middle.top() < top) {
-			middle.push(top);
-			left.pop();
-		} else {
-			right.push(top);
-			left.pop();
-		}
-	}
-	
-	while(middle.size()) {
-		int top = middle.top();
-		if(right.top() < top) {
-			right.push(top);
-			middle.pop();
-		}
-	}
-	
-	cout << right.size() << "\n";
+	cout << cnt << "\n";
+	for(auto r : result) 
+		cout << r.first << " " << r.second << "\n";
 	
 	return 0;
 }
