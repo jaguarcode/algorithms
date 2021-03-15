@@ -13,16 +13,6 @@ int main() {
 	 * where any two successive strings differ in exactly one bit 
 	 * (i.e., their Hamming distance is one).
 	 * Your task is to create a Gray code for a given length n.
-	 * Example
-
-		Input:
-		2
-
-		Output:
-		00
-		01
-		11
-		10
 	 */
 	
 	
