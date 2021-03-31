@@ -5,8 +5,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int n = 4;
-int column[n*n], diag1[n*n], diag2[n*n];
+int n = 0;
+vector<int> column, diag1, diag2;
 int answer = 0;
 
 void search(int y) {
@@ -25,6 +25,12 @@ void search(int y) {
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
+	
+	cin >> n;
+	
+	column.resize(n*n);
+	diag1.resize(n*n);
+	diag2.resize(n*n);
 	
 	// n-queen problem
 	search(0);
