@@ -46,32 +46,9 @@ void solve(const size_t column) {
     }
 }
 
-int n = 0;
-vector<int> diag1;
-vector<int> diag2;
-vector<int> column;
-
-void solve2(const int& y) {
-    if(n == y) {
-        answer++;
-        return;
-    }
-    for(int x = 0; x < n; x++) {
-        if(column[x] || diag1[x+y] || diag2[x-y+n-1]) continue;
-        column[x] = diag1[x+y] = diag2[x-y+n-1] = 1;
-        solve2(y+1);
-        column[x] = diag1[x+y] = diag2[x-y+n-1] = 0;
-    }
-}
-
 int main()
 {
-    n = 8;
-    diag1.resize(n*n);
-    diag2.resize(n*n);
-    column.resize(n*n);
-
-    solve2(0);    
+    solve(0);
     cout << "answer: " << answer << "\n";
     return 0;
 }

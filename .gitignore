@@ -3,11 +3,7 @@
 
 ### Built Files ###
 !.cpp
-.exe
-a.exe
-b.exe
-c.exe
+*.exe
 a
 b
 c
-
