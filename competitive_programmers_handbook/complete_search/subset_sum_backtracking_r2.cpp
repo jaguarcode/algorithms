@@ -1,3 +1,8 @@
+/**
+ * Subset Sum Problem
+ * Ref: https://greatzzo.tistory.com/39
+ * */
+
 #include <bits/stdc++.h>
 using namespace std;
 
