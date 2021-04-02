@@ -1,6 +1,9 @@
 ### VS Code ###
 .vscode
 
+### Clion ###
+.idea
+
 ### Built Files ###
 !.cpp
 *.exe
