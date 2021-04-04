@@ -7,17 +7,8 @@ using namespace std;
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	
-	/*
-	 * A Gray code is a list of all 2n bit strings of length n, 
-	 * where any two successive strings differ in exactly one bit 
-	 * (i.e., their Hamming distance is one).
-	 * Your task is to create a Gray code for a given length n.
-	 * Example
 
-		Input:
-		2
-
+<<<<<<< HEAD
 		Output:
 		00
 		01
@@ -47,7 +38,26 @@ int main() {
 	
 	
 	for(auto a : result) cout << a << "\n";
+=======
+	int n;
+	cin >> n;
 	
+	int cnt = pow(2, n);
+	vector<string> p = { "0", "1", "1", "0" };
+	
+	vector<string> v(cnt);
+	int r = pow(2, n-1);
+	
+	for(int i = n; i > 0; i--) {
+		for(size_t j = 0; j < v.size(); j++) {
+			string& c = v[j];
+			c += p[(j/r)%p.size()];
+		}
+		r /= 2;
+	}
+>>>>>>> 1accf99401ebc0e298aa64e387173462e24a86bb
+	
+	for(auto a : v) cout << a << "\n";
 	
 	return 0;
 }
